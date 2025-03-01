@@ -1,1 +1,83 @@
 
+Question 1: Paste the console output you saved at the end of step 3.C (2 points)
+
+<Insert the console output here from your terminal after running git push for status.txt>
+Example:
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 362 bytes | 362.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/YourGitHubcastrejon29/assignment2.git
+   abc1234..def5678  main -> main
+
+Question 2: How many commits have been done to the repository (by anyone)? (4 points)
+
+Command:
+
+git log --oneline | wc -l
+
+Sample Answer:
+
+There are 3 commits in the repository.
+Command used: git log --oneline | wc -l
+
+Question 3: When was README.md last modified? (4 points)
+
+Command:
+
+git log -1 -- README.md
+
+Sample Answer:
+
+The README.md file was last modified on Saturday, March 1, 2025/5:21 AM from command output].
+Command used: git log -1 -- README.md
+
+Question 4: Mention two reasons why branches are used in a Git repository (4 points)
+
+1. To isolate feature development from the main codebase.
+2. To allow multiple developers to work on different features simultaneously.
+
+Question 5: What is the difference between git log and git status? (4 points)
+
+- git log: Shows the history of commits in the repository.
+- git status: Shows the current state of the working directory and staging area, including uncommitted changes.
+
+Question 6: What command would you use to see the commits where “Vehicle.h” was one of the committed files? (4 points)
+
+Command:
+
+git log --oneline --name-only | grep -B 1 Vehicle.h
+
+Question 7: What command would you use to see the commits whose commit message contains the word “file”? (4 points)
+
+Command:
+
+git log --grep="file"
+
+Question 8: Object-Oriented Programming Concepts (6 points)
+
+I) Inheritance: A mechanism where one class acquires properties and behaviors (methods) from another class. This promotes code reuse.
+II) Polymorphism: The ability of different classes to be treated through the same interface, with each class implementing the interface differently (method overriding or overloading).
+III) Encapsulation: The process of hiding the internal details of an object and only exposing necessary parts. This protects data integrity and reduces complexity.
+
+Question 9: Difference between “Dictator and Lieutenants” and “Integration Manager” workflow (5 points)
+
+- Dictator and Lieutenants Workflow: Developers push changes to lieutenant repositories. Lieutenants review and merge the changes, and then the dictator reviews and merges lieutenant branches into the main repository.
+- Integration Manager Workflow: Each developer has their own public repository. Developers pull from a central repository, but all final integration is handled by a single integration manager.
+
+Question 10: Benefits of Dictator and Lieutenants Workflow for 100 developers (5 points)
+
+- Workload is distributed among lieutenants, reducing bottlenecks for large teams.
+- Each lieutenant handles reviewing and merging for a subset of developers, ensuring faster reviews and better code quality.
+- Centralized decision-making by the dictator ensures consistency in the main repository.
+- This approach scales better than a centralized workflow where all 100 developers push directly to a single repository.
+
+Final Step — Commit and Push
+
+After completing answers.txt, run:
+
+git add docs/answers.txt
+git commit -m "Complete answers.txt with assignment responses"
+git push
